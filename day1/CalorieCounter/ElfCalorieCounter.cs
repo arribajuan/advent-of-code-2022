@@ -6,7 +6,8 @@ public class ElfCalorieCounter
     {
         List<string> inputStringList = new List<string>();
 
-        throw new NotImplementedException("Not fully implemented.");
+        string[] fileLines = File.ReadAllLines(inputFilePath, System.Text.Encoding.Default);
+        inputStringList.AddRange(fileLines);
 
         return inputStringList;
     }

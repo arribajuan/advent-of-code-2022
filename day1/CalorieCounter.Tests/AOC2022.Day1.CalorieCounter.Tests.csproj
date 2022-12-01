@@ -25,4 +25,10 @@
     <ProjectReference Include="..\CalorieCounter\AOC2022.Day1.CalorieCounter.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\assets\data\sample-data.txt">
+      <Link>sample-data.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
