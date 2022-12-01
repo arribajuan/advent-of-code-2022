@@ -14,56 +14,69 @@ This would serve as the bare minimum app.
 
 ### Steps to create the dotnet template app
 
-`cd A0C2022.Day0`
-
 Create the new solution
 
-`dotnet new sln --name AOC2022.Day0`
+```
+dotnet new sln --name AOC2022.Day0
+```
 
 Create new projects
 
-`dotnet new console --name AOC2022.Day0.CLI --output CLI --framework net7.0`
+```
+dotnet new console --name AOC2022.Day0.CLI --output CLI --framework net7.0
 
-`dotnet new classlib --name AOC2022.Day0.MessageGenerator --output MessageGenerator --framework net7.0`
+dotnet new classlib --name AOC2022.Day0.MessageGenerator --output MessageGenerator --framework net7.0
 
-`dotnet new xunit --name AOC2022.Day0.MessageGenerator.Tests --output MessageGenerator.Tests --project MessageGenerator/AOC2022.Day0.MessageGenerator.csproj --framework net7.0`
+dotnet new xunit --name AOC2022.Day0.MessageGenerator.Tests --output MessageGenerator.Tests --project MessageGenerator/AOC2022.Day0.MessageGenerator.csproj --framework net7.0
+```
 
 Add oroject references
 
-`dotnet add CLI/AOC2022.Day0.CLI.csproj reference MessageGenerator/AOC2022.Day0.MessageGenerator.csproj`
+```
+dotnet add CLI/AOC2022.Day0.CLI.csproj reference MessageGenerator/AOC2022.Day0.MessageGenerator.csproj
 
-`dotnet add MessageGenerator.Tests/AOC2022.Day0.MessageGenerator.Tests.csproj reference MessageGenerator/AOC2022.Day0.MessageGenerator.csproj`
+dotnet add MessageGenerator.Tests/AOC2022.Day0.MessageGenerator.Tests.csproj reference MessageGenerator/AOC2022.Day0.MessageGenerator.csproj
+```
 
 Add projects to solution
 
-`dotnet sln add CLI`
+```
+dotnet sln add CLI
 
-`dotnet sln add MessageGenerator`
+dotnet sln add MessageGenerator
 
-`dotnet sln add MessageGenerator.Tests`
-
+dotnet sln add MessageGenerator.Tests
+```
 
 ### Create new gitignore for dotnet projects
 
-`dotnet new gitignore --force`
+```
+dotnet new gitignore
+```
 
 ### Build the solution
 
-`dotnet build`
+```
+dotnet build
+```
 
 ![Project build](/day0/assets/images/project-build.png "Project build")
 
 ### Test the solution (Unit tests)
 
-`dotnet test`
+```
+dotnet test
+```
 
-![Project build](/day0/assets/images/project-test.png "Project build")
+![Project test](/day0/assets/images/project-test.png "Project test")
 
 ### Run the solution (CLI)
 
-`dotnet run`
+```
+dotnet run
+```
 
-
+![Project run](/day0/assets/images/project-run.png "Project run")
 
 ### References
 
