@@ -2,7 +2,9 @@
 
 The goal is to create a template project with a class library, unit tests and a CLI to run it.
 
-This would be the bare minimum app.
+We will build an overengineerid hello world application.
+
+This would serve as the bare minimum app.
 
 ## Dotnet template application
 
@@ -44,6 +46,24 @@ Add projects to solution
 ### Create new gitignore for dotnet projects
 
 `dotnet new gitignore --force`
+
+### Build the solution
+
+`dotnet build`
+
+![Project build](/day0/assets/images/project-build.png "Project build")
+
+### Test the solution (Unit tests)
+
+`dotnet test`
+
+![Project build](/day0/assets/images/project-test.png "Project build")
+
+### Run the solution (CLI)
+
+`dotnet run`
+
+
 
 ### References
 
