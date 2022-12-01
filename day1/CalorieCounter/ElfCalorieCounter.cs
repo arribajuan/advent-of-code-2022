@@ -16,7 +16,24 @@ public class ElfCalorieCounter
     {
         List<int> caloriesPerElf = new List<int>();
 
-        throw new NotImplementedException("Not fully implemented.");
+        int calorieCount = 0;
+        foreach(string snackCalories in foodList)
+        {
+            if (snackCalories == "")
+            {
+                caloriesPerElf.Add(calorieCount);
+                calorieCount = 0;
+            }
+            else
+            {
+                calorieCount += Convert.ToInt32(snackCalories);
+            }
+        }
+
+        if (calorieCount > 0)
+        {
+            caloriesPerElf.Add(calorieCount);
+        }
 
         return caloriesPerElf;
     }
