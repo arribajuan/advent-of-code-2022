@@ -4,37 +4,6 @@ namespace AOC2022.Day1.CalorieCounter.Tests;
 
 public class ElfCalorieCounterTest
 {
-    [Fact]
-    public void TextFileIsLoaded()
-    {
-        ElfCalorieCounter ecc = new ElfCalorieCounter();
-        List<string> sampleData = GetSampleData();
-
-        Assert.NotEmpty(sampleData);
-    }
-
-    [Fact]
-    public void TextFileHas14Rows()
-    {
-        ElfCalorieCounter ecc = new ElfCalorieCounter();
-        List<string> sampleData = GetSampleData();
-
-        Assert.Equal(14, sampleData.Count);
-    }
-
-    [Theory]
-    [InlineData(0, "1000")]
-    [InlineData(4, "4000")]
-    [InlineData(5, "")]
-    [InlineData(13, "10000")]
-    public void TextFileHasSpecificData(int inputPosition, string expectedValue)
-    {
-        ElfCalorieCounter ecc = new ElfCalorieCounter();
-        List<string> sampleData = GetSampleData();
-
-        Assert.True(expectedValue == sampleData[inputPosition], $"Expected '{expectedValue}' at position {inputPosition}, got '{sampleData[inputPosition]}'");
-    }
-
     [Theory]
     [InlineData(0, 6000)]
     [InlineData(1, 4000)]
@@ -43,7 +12,7 @@ public class ElfCalorieCounterTest
     [InlineData(4, 10000)]
     public void CountCaloriesPerElfYieldsSpecificCalorieTotals(int elfPosition, int expectedTotalCalories)
     {
-        List<int> calorieTotals = GetCalorieTotals();
+        List<int> calorieTotals = Helper.GetCalorieTotals();
 
         Assert.True(expectedTotalCalories == calorieTotals[elfPosition], $"Expected '{expectedTotalCalories}' at position {elfPosition}, got '{calorieTotals[elfPosition]}'");
     }
@@ -51,7 +20,7 @@ public class ElfCalorieCounterTest
     [Fact]
     public void TopElfCalorieTotal()
     {
-        List<int> calorieTotals = GetCalorieTotals();
+        List<int> calorieTotals = Helper.GetCalorieTotals();
 
         ElfCalorieCounter ecc = new ElfCalorieCounter();
         int caloriesFromTopElf = ecc.FindCaloriesFromTopElf(calorieTotals);
@@ -62,31 +31,11 @@ public class ElfCalorieCounterTest
     [Fact]
     public void TopThreeElvesCalorieTotal()
     {
-        List<int> calorieTotals = GetCalorieTotals();
+        List<int> calorieTotals = Helper.GetCalorieTotals();
 
         ElfCalorieCounter ecc = new ElfCalorieCounter();
         int caloriesFromTopThreeElves = ecc.FindCaloriesFromTopThreeElves(calorieTotals);
 
         Assert.Equal(45000, caloriesFromTopThreeElves);
-    }
-
-    private List<string> GetSampleData()
-    {
-        string sampleDataPath = AppDomain.CurrentDomain.BaseDirectory + "sample-data.txt";
-
-        ElfCalorieCounter ecc = new ElfCalorieCounter();
-        List<string> sampleData = ecc.LoadInput(sampleDataPath);
-
-        return sampleData;
-    }
-
-    private List<int> GetCalorieTotals()
-    {
-        List<string> sampleData = GetSampleData();
-
-        ElfCalorieCounter ecc = new ElfCalorieCounter();
-        List<int> calorieTotals = ecc.CountCaloriesPerElf(sampleData);
-
-        return calorieTotals;
     }
 }
