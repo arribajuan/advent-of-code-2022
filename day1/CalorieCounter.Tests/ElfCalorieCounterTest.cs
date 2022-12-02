@@ -49,7 +49,7 @@ public class ElfCalorieCounterTest
     }
 
     [Fact]
-    public void CountCaloriesPerElfYTopElfCalorieTotal()
+    public void TopElfCalorieTotal()
     {
         List<int> calorieTotals = GetCalorieTotals();
 
@@ -57,6 +57,17 @@ public class ElfCalorieCounterTest
         int caloriesFromTopElf = ecc.FindCaloriesFromTopElf(calorieTotals);
 
         Assert.Equal(24000, caloriesFromTopElf);
+    }
+
+    [Fact]
+    public void TopThreeElvesCalorieTotal()
+    {
+        List<int> calorieTotals = GetCalorieTotals();
+
+        ElfCalorieCounter ecc = new ElfCalorieCounter();
+        int caloriesFromTopThreeElves = ecc.FindCaloriesFromTopThreeElves(calorieTotals);
+
+        Assert.Equal(45000, caloriesFromTopThreeElves);
     }
 
     private List<string> GetSampleData()

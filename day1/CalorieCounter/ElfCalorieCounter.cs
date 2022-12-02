@@ -1,4 +1,6 @@
-﻿namespace AOC2022.Day1.CalorieCounter;
+﻿using System.Linq;
+
+namespace AOC2022.Day1.CalorieCounter;
 
 public class ElfCalorieCounter
 {
@@ -44,4 +46,12 @@ public class ElfCalorieCounter
 
         return maxCalorieTotal;
     }
+
+    public int FindCaloriesFromTopThreeElves(List<int> calorieCountPerElc)
+    {
+        int topThreeCalorieTotal = calorieCountPerElc.OrderDescending().Take(3).Sum();
+
+        return topThreeCalorieTotal;
+    }
+
 }
