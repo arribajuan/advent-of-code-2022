@@ -48,6 +48,17 @@ public class ElfCalorieCounterTest
         Assert.True(expectedTotalCalories == calorieTotals[elfPosition], $"Expected '{expectedTotalCalories}' at position {elfPosition}, got '{calorieTotals[elfPosition]}'");
     }
 
+    [Fact]
+    public void CountCaloriesPerElfYTopElfCalorieTotal()
+    {
+        List<int> calorieTotals = GetCalorieTotals();
+
+        ElfCalorieCounter ecc = new ElfCalorieCounter();
+        int caloriesFromTopElf = ecc.FindCaloriesFromTopElf(calorieTotals);
+
+        Assert.Equal(24000, caloriesFromTopElf);
+    }
+
     private List<string> GetSampleData()
     {
         string sampleDataPath = AppDomain.CurrentDomain.BaseDirectory + "sample-data.txt";

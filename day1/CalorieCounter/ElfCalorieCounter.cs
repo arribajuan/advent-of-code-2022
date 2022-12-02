@@ -37,4 +37,11 @@ public class ElfCalorieCounter
 
         return caloriesPerElf;
     }
+
+    public int FindCaloriesFromTopElf(List<int> calorieCountPerElc)
+    {
+        int maxCalorieTotal = calorieCountPerElc.Max();
+
+        return maxCalorieTotal;
+    }
 }
