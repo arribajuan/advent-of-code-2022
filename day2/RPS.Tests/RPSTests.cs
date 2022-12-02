@@ -12,8 +12,7 @@ public class RPSTests
         round.PlayerHand = Enumerations.Hand.Rock;
         round.OpponentHand = Enumerations.Hand.Scissor;
 
-        Tournament tournament = new Tournament();
-        RoundResult result = tournament.PlayRound(round);
+        RoundResult result = Tournament.PlayRound(round);
 
         Assert.Equal(Enumerations.Outcome.Win, result.PlayerOutcome);
     }
@@ -25,8 +24,7 @@ public class RPSTests
         round.PlayerHand = Enumerations.Hand.Scissor;
         round.OpponentHand = Enumerations.Hand.Paper;
 
-        Tournament tournament = new Tournament();
-        RoundResult result = tournament.PlayRound(round);
+        RoundResult result = Tournament.PlayRound(round);
 
         Assert.Equal(Enumerations.Outcome.Win, result.PlayerOutcome);
     }
@@ -38,8 +36,7 @@ public class RPSTests
         round.PlayerHand = Enumerations.Hand.Paper;
         round.OpponentHand = Enumerations.Hand.Rock;
 
-        Tournament tournament = new Tournament();
-        RoundResult result = tournament.PlayRound(round);
+        RoundResult result = Tournament.PlayRound(round);
 
         Assert.Equal(Enumerations.Outcome.Win, result.PlayerOutcome);
     }
@@ -51,8 +48,7 @@ public class RPSTests
         round.PlayerHand = Enumerations.Hand.Rock;
         round.OpponentHand = Enumerations.Hand.Rock;
 
-        Tournament tournament = new Tournament();
-        RoundResult result = tournament.PlayRound(round);
+        RoundResult result = Tournament.PlayRound(round);
 
         Assert.Equal(Enumerations.Outcome.Tie, result.PlayerOutcome);
     }

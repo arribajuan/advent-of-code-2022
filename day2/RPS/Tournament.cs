@@ -9,12 +9,12 @@ namespace AOC2022.Day2.RPS
 			
 		}
 
-		public TournamentResult PlayTournament(List<Round> roundsToPlay)
+		public static TournamentResult PlayTournament(List<Round> roundsToPlay)
 		{
 			return new TournamentResult();
 		}
 
-        public RoundResult PlayRound(Round roundToPlay)
+        public static RoundResult PlayRound(Round roundToPlay)
 		{
 			return new RoundResult();
 		}
