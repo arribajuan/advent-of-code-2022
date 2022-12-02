@@ -50,7 +50,7 @@ public class ElfCalorieCounterTest
 
     private List<string> GetSampleData()
     {
-        string sampleDataPath = Environment.CurrentDirectory + "/sample-data.txt";
+        string sampleDataPath = AppDomain.CurrentDomain.BaseDirectory + "sample-data.txt";
 
         ElfCalorieCounter ecc = new ElfCalorieCounter();
         List<string> sampleData = ecc.LoadInput(sampleDataPath);
