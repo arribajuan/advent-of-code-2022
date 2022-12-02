@@ -5,7 +5,7 @@ namespace AOC2022.Day2.RPS.Tests
 {
 	public class ElfStrategyGuideTests
 	{
-        [Theory]
+        [Theory] 
         [InlineData("A", Enumerations.Hand.Rock, "X", Enumerations.Hand.Rock)]
         [InlineData("B", Enumerations.Hand.Paper, "Y", Enumerations.Hand.Paper)]
         [InlineData("C", Enumerations.Hand.Scissor, "Z", Enumerations.Hand.Scissor)]
