@@ -1,6 +1,6 @@
 # Day 1 - Calorie counter
 
-# Day 0 - Create the project skeleton
+## Create the project skeleton
 
 Use the tempalte from [day 0](../day0/README.md) to get the base project created.
 
@@ -31,8 +31,19 @@ dotnet sln add CalorieCounter.Tests
 dotnet new gitignore
 ```
 
+## Running the project
 
+Assuming you aree at the root of the day 1 folder.
 
+``` 
+dotnet build
+dotnet run --project cli
+```
 
+## Executing unit tests
 
+Assuming you aree at the root of the day 1 folder.
 
+```
+dotnet test
+```
