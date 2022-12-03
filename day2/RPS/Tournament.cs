@@ -6,7 +6,29 @@ namespace AOC2022.Day2.RPS
     {
 		public static TournamentResult PlayTournament(List<Round> roundsToPlay)
 		{
-			return new TournamentResult();
+            TournamentResult result = new TournamentResult();
+
+            foreach (Round roundToPlay in roundsToPlay)
+            {
+                RoundResult roundPlayed = Tournament.PlayRound(roundToPlay);
+                result.OpponentTotalPoints += roundPlayed.OpponentPointsThisRound;
+                result.PlayerTotalPoints += roundPlayed.PlayerPointsThisRound;
+            }
+
+            if (result.OpponentTotalPoints > result.PlayerTotalPoints)
+            {
+                result.PlayerOutcome = Enumerations.Outcome.Lose;
+            }
+            else if (result.OpponentTotalPoints < result.PlayerTotalPoints)
+            {
+                result.PlayerOutcome = Enumerations.Outcome.Win;
+            }
+            else
+            {
+                result.PlayerOutcome = Enumerations.Outcome.Tie;
+            }
+
+            return result;
 		}
 
         public static RoundResult PlayRound(Round roundToPlay)

@@ -4,7 +4,6 @@ namespace AOC2022.Day2.RPS.Tests;
 
 public class TournamentTests
 {
-
     [Theory]
     [InlineData(Enumerations.Hand.Rock, Enumerations.Hand.Rock, 4, 4)]
     [InlineData(Enumerations.Hand.Rock, Enumerations.Hand.Paper, 1, 8)]
@@ -31,17 +30,13 @@ public class TournamentTests
         Assert.Equal(expectedPlayerPoints, result.PlayerPointsThisRound);
     }
 
-    /*
-    public static TournamentResult PlayTournament(List<Round> roundsToPlay)
+    [Fact]
+    public void PlayTournament()
     {
-        return new TournamentResult();
+        List<Round> decryptedElfStrategyGuide = Helper.GetDecryptedElfStrategyGuide();
+
+        TournamentResult result = Tournament.PlayTournament(decryptedElfStrategyGuide);
+        
+        Assert.Equal(15, result.PlayerTotalPoints);
     }
-
-    // The winner of the whole tournament is the player with the highest score.
-    // Your total score is the sum of your scores for each round.
-
-
-    */
-
-
 }

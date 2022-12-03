@@ -25,4 +25,10 @@
     <ProjectReference Include="..\RPS\AOC2022.Day2.RPS.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\assets\data\sample-data.txt">
+      <Link>sample-data.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
