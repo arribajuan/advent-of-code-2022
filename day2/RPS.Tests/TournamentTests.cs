@@ -36,7 +36,8 @@ public class TournamentTests
         List<Round> decryptedElfStrategyGuide = Helper.GetDecryptedElfStrategyGuide();
 
         TournamentResult result = Tournament.PlayTournament(decryptedElfStrategyGuide);
-        
-        Assert.Equal(15, result.PlayerTotalPoints);
+
+        //Assert.Equal(15, result.PlayerTotalPoints);   // Star 1
+        Assert.Equal(12, result.PlayerTotalPoints);     // Star 2
     }
 }
