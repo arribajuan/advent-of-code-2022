@@ -11,28 +11,38 @@ public class ElfPairTests
     [InlineData("2-8,3-7", true)]
     [InlineData("6-6,4-6", true)]
     [InlineData("2-6,4-8", false)]
-    public void ElfPairOverlappingAssignment(string assignmentString, bool expectedIsOverlapping)
+    public void ElfPairFullyOverlappingAssignment(string assignmentString, bool expectedIsOverlapping)
     {
         ElfPair ep = new ElfPair(assignmentString);
 
-        Assert.Equal(expectedIsOverlapping, ep.AreAssignmentsOverlapping);
+        Assert.Equal(expectedIsOverlapping, ep.AreAssignmentsFullyOverlapping);
     }
 
     [Fact]
-    public void ElfPairSampleDataOverlappingAssignment()
+    public void ElfPairSampleDataFullyOverlappingAssignment()
     {
         List<string> sampleData = Helper.GetSampleData();
 
-        int overlapCount = 0;
+        int fullOverlapCount = 0;
+        int partialOverlapCount = 0;
+        int someOverlapCount = 0;
         foreach(string sampleAssignmentString in sampleData)
         {
             ElfPair ep = new ElfPair(sampleAssignmentString);
-            if (ep.AreAssignmentsOverlapping)
+            if (ep.AreAssignmentsFullyOverlapping)
             {
-                overlapCount++;
+                fullOverlapCount++;
+            }
+            if (ep.AreAssignmentsPartiallyOverlapping)
+            {
+                partialOverlapCount++;
             }
         }
+        someOverlapCount = fullOverlapCount + partialOverlapCount;
 
-        Assert.Equal(2, overlapCount);
+        Assert.Equal(2, fullOverlapCount);
+        Assert.Equal(2, partialOverlapCount);
+        Assert.Equal(4, someOverlapCount);
+        Assert.Equal(6, sampleData.Count);
     }
 }
