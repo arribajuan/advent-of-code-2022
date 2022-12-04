@@ -68,7 +68,7 @@ public class RucksackTests
     }
 
     [Fact]
-    public void RucksackSampleDataTotalCost()
+    public void RucksackSampleDataMisplacedItemTotalCost()
     {
         List<string> sampleData = Helper.GetSampleData();
 
@@ -79,5 +79,19 @@ public class RucksackTests
         }
 
         Assert.Equal(157, elfGroup.MisplacedItemTotalCost);
+    }
+
+    [Fact]
+    public void RucksackSampleDataCommonItemTotalCost()
+    {
+        List<string> sampleData = Helper.GetSampleData();
+
+        ElfGroup elfGroup = new ElfGroup();
+        foreach (string sampleItem in sampleData)
+        {
+            elfGroup.AddRucksack(new ElfRucksack(sampleItem));
+        }
+
+        Assert.Equal(70, elfGroup.CommonItemTotalCost);
     }
 }

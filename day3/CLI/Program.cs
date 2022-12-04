@@ -16,10 +16,12 @@ foreach (string inputItem in inputData)
 Console.WriteLine("Advent of code - Day 3 - console");
 Console.WriteLine("");
 Console.WriteLine($"Total misplaced item cost: {elfGroup.MisplacedItemTotalCost}");
+Console.WriteLine($"Total common item cost: {elfGroup.CommonItemTotalCost}");
 Console.WriteLine("");
 
 // Works in VS
 System.Diagnostics.Debug.WriteLine("Advent of code - Day 3 - debug");
 System.Diagnostics.Debug.WriteLine("");
 System.Diagnostics.Debug.WriteLine($"Total misplaced item cost: {elfGroup.MisplacedItemTotalCost}");
+System.Diagnostics.Debug.WriteLine($"Total common item cost: {elfGroup.CommonItemTotalCost}");
 System.Diagnostics.Debug.WriteLine("");

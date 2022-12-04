@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace AOC2022.Day3.Rucksack
 {
 	public class FileLoader

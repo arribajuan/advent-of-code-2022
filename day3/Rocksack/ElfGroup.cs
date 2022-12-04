@@ -8,11 +8,13 @@ namespace AOC2022.Day3.Rucksack
     {
         public List<ElfRucksackGroup> RucksackGroupList { get; private set; }
         public int MisplacedItemTotalCost { get; private set; }
+        public int CommonItemTotalCost { get; private set; }
 
         public ElfGroup()
         {
             this.RucksackGroupList = new List<ElfRucksackGroup>();
             this.MisplacedItemTotalCost = 0;
+            this.CommonItemTotalCost = 0;
         }
 
         public void AddRucksack(ElfRucksack rucksackToAddk)
@@ -31,8 +33,8 @@ namespace AOC2022.Day3.Rucksack
             // Add racksack to teh last group
             this.RucksackGroupList[this.RucksackGroupList.Count - 1].AddRucksack(rucksackToAddk);
 
-            // Calculate total cost
             this.CalculateMisplacedItemCost();
+            this.CalculateCommonItemFCost();
         }
 
         private void CalculateMisplacedItemCost()
@@ -42,6 +44,16 @@ namespace AOC2022.Day3.Rucksack
             foreach (ElfRucksackGroup rs in this.RucksackGroupList)
             {
                 this.MisplacedItemTotalCost += rs.MisplacedItemGroupCost;
+            }
+        }
+
+        private void CalculateCommonItemFCost()
+        {
+            this.CommonItemTotalCost = 0;
+
+            foreach (ElfRucksackGroup rs in this.RucksackGroupList)
+            {
+                this.CommonItemTotalCost += rs.CommonItemCost;
             }
         }
     }
