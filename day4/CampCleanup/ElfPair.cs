@@ -58,32 +58,6 @@ namespace AOC2022.Day4.CampCleanup
                 }
             }
 
-
-            /*
-            2-4,6-8 - no overlap
-            2-3,4-5 - no overlap
-            5-7,7-9 - partially overlap
-            2-8,3-7 - fully overlap
-            6-6,4-6 - fully overlap
-            2-6,4-8
-
-            5-7,8-9 - no overlap
-            5-7,7-9 - partially overlap
-            5-7,6-9 - partially overlap
-            5-7,3-4 - no overlap
-            5-7,4-6 - partially overlap
-            5-7,4-7 - fully overlap
-
-            8-9,5-7 - 
-            7-9,5-7 -
-            7-9,5-6 - 
-            6-9,5-7 - 
-
-            4-6,5-7 - 
-            4-7,5-7 - 
-
-             */
-
             #endregion
         }
     }
