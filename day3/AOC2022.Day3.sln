@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day3.CLI", "CLI\AOC2022.Day3.CLI.csproj", "{C90A38AB-760E-459D-861F-A8860ABE6B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day3.Rocksack", "Rocksack\AOC2022.Day3.Rocksack.csproj", "{321CA8F9-2A75-43D3-B52E-08D97CDB26B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day3.Rucksack", "Rocksack\AOC2022.Day3.Rucksack.csproj", "{321CA8F9-2A75-43D3-B52E-08D97CDB26B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day3.Rocksack.Tests", "Rocksack.Tests\AOC2022.Day3.Rocksack.Tests.csproj", "{1850BE8B-8A2D-4CFB-9934-07E1B0818A68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day3.Rucksack.Tests", "Rocksack.Tests\AOC2022.Day3.Rucksack.Tests.csproj", "{1850BE8B-8A2D-4CFB-9934-07E1B0818A68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
