@@ -25,4 +25,10 @@
     <ProjectReference Include="..\CampCleanup\AOC2022.Day4.CampCleanup.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\assets\data\sample-data.txt">
+      <Link>sample-data.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
