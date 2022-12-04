@@ -72,13 +72,12 @@ public class RucksackTests
     {
         List<string> sampleData = Helper.GetSampleData();
 
-        int costSum = 0;
+        ElfGroup elfGroup = new ElfGroup();
         foreach (string sampleItem in sampleData)
         {
-            ElfRucksack rs = new ElfRucksack(sampleItem);
-            costSum += rs.MisplacedItemCost;
+            elfGroup.AddRucksack(new ElfRucksack(sampleItem));
         }
 
-        Assert.Equal(157, costSum);
+        Assert.Equal(157, elfGroup.MisplacedItemTotalCost);
     }
 }
