@@ -35,16 +35,14 @@ namespace AOC2022.Day5.SupplyStack
             this.ShipSupplies = new CargoShipSupplies(initialSuppliesStrings);
 		}
 
-        public void MoveCrates(int amount, int sourceStackNumber, int destinationStackNumber)
+        public void MoveCrates(CraneInstruction craneInstruction)
         {
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i < craneInstruction.Amount; i++)
             {
-                int itemToMove = this.ShipSupplies.StackList[sourceStackNumber - 1].Pop();
-                this.ShipSupplies.StackList[destinationStackNumber - 1].Push(itemToMove);
+                int itemToMove = this.ShipSupplies.StackList[craneInstruction.SourceStackNumber - 1].Pop();
+                this.ShipSupplies.StackList[craneInstruction.DestinationStackNumber - 1].Push(itemToMove);
             }
         }
-
-
     }
 }
 

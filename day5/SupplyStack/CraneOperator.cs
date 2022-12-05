@@ -11,7 +11,13 @@ namespace AOC2022.Day5.SupplyStack
 			this.CraneInstructions = new List<CraneInstruction>();
 		}
 
-		// execute instructions method
+		public void ExecuteInstructions(CargoShip ship)
+		{
+			foreach (CraneInstruction instruction in this.CraneInstructions)
+			{
+				ship.MoveCrates(instruction);
+			}
+		}
 
 		private void ParseCraneInstructions(string[] craneInstructionsStrings)
 		{
