@@ -1,61 +1,50 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
 
 namespace AOC2022.Day5.SupplyStack
 {
 	public class CargoShipSupplies
     {
-        public List<Stack<int>> StackList { get; private set; }
+        public List<Stack<string>> StackList { get; private set; }
 
         public CargoShipSupplies(string[] initialSuppliesStrings)
 		{
-			this.StackList = new List<Stack<int>>();
+			this.StackList = new List<Stack<string>>();
 
 			this.ParseInitialSupplies(initialSuppliesStrings);
 		}
 
 		private void ParseInitialSupplies(string[] initialSuppliesStrings)
 		{
-            /*      
-            [N]
-            [Z]
-             1 
-
-                [D]    
-            [N] [C]    
-            [Z] [M]
-             1   2 
-
-                [D]    
-            [N] [C]    
-            [Z] [M] [P]
-             1   2   3
-
-            length = 3, 7, 11, 15, 19
-                if length < 3 ... no columns
-                if length = 3 ... one column
-                if length > 3 ... many columns
-
-            
-
             // Assuming single digit column numbers (1-9)
-            var count = jobId.Count(Char.IsDigit);
+            string stackNumberRow = initialSuppliesStrings[initialSuppliesStrings.Length - 1];
+            var stackCount = stackNumberRow.Count(Char.IsDigit);
 
-            for (int I = )
-            foreach (string initialSuppliesString in initialSuppliesStrings)
+            for(int i = 0; i < stackCount; i++)
             {
-                int totalLength = initialSuppliesString.Length;
-                int totalColumns = initialSuppliesString.Count(Char.IsDigit);
-
-
-                int i = 0;
-                do while()
+                this.StackList.Add(new Stack<string>());
             }
 
-            */
+            // Process each row from the bottom -> up
+            // so that we can "push" the items into teh stack
+            for (int i = initialSuppliesStrings.Length - 2; i >= 0; i--)
+            {
+                string supplyString = initialSuppliesStrings[i];
 
+                for (int j = 0; j < stackCount; j++)
+                {
+                    int textIndex = (j * 4) + 1;
+                    string textAtIndex = supplyString[textIndex].ToString();
+
+                    if (textAtIndex != " ")
+                    {
+                        this.StackList[j].Push(textAtIndex);
+                    }
+                }
+            }
         }
-
-
     }
 }
 

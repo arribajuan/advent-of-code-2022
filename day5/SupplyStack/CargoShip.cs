@@ -39,8 +39,8 @@ namespace AOC2022.Day5.SupplyStack
         {
             for (int i = 0; i < craneInstruction.Amount; i++)
             {
-                int itemToMove = this.ShipSupplies.StackList[craneInstruction.SourceStackNumber - 1].Pop();
-                this.ShipSupplies.StackList[craneInstruction.DestinationStackNumber - 1].Push(itemToMove);
+                //int itemToMove = this.ShipSupplies.StackList[craneInstruction.SourceStackNumber - 1].Pop();
+                //this.ShipSupplies.StackList[craneInstruction.DestinationStackNumber - 1].Push(itemToMove);
             }
         }
     }
