@@ -6,9 +6,11 @@ namespace AOC2022.Day5.SupplyStack
 	{
 		public List<CraneInstruction> CraneInstructions { get; private set; }
 
-		public CraneOperator()
+		public CraneOperator(string[] craneInstructionsStrings)
 		{
 			this.CraneInstructions = new List<CraneInstruction>();
+
+			this.ParseCraneInstructions(craneInstructionsStrings);
 		}
 
 		public void ExecuteInstructions(CargoShip ship)
