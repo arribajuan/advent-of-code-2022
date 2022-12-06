@@ -24,7 +24,7 @@ dotnet new gitignore
 
 ## Running the project
 
-Assuming you aree at the root of the day 3 folder.
+Assuming you aree at the root of the day 4 folder.
 
 ``` 
 dotnet build
@@ -33,7 +33,7 @@ dotnet run --project cli
 
 ## Executing unit tests
 
-Assuming you aree at the root of the day 3 folder.
+Assuming you aree at the root of the day 4 folder.
 
 ```
 dotnet test
