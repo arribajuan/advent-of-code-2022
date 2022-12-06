@@ -11,10 +11,12 @@ ElfDevice device = new ElfDevice(inputData[0]);
 // Works in terminal
 Console.WriteLine("Advent of code - Day 6 - console");
 Console.WriteLine("");
-Console.WriteLine($"First marker at: {device.FirstMarkerIndex}");
+Console.WriteLine($"First packet marker at: {device.FirstPacketMarkerIndex}");
+Console.WriteLine($"First message marker at: {device.FirstMessageMarkerIndex}");
 Console.WriteLine("");
 
 System.Diagnostics.Debug.WriteLine("Advent of code - Day 6 - debug");
 System.Diagnostics.Debug.WriteLine("");
-System.Diagnostics.Debug.WriteLine($"First marker at: {device.FirstMarkerIndex}");
+System.Diagnostics.Debug.WriteLine($"First packet marker at: {device.FirstPacketMarkerIndex}");
+System.Diagnostics.Debug.WriteLine($"First message marker at: {device.FirstMessageMarkerIndex}");
 System.Diagnostics.Debug.WriteLine("");
