@@ -1,4 +1,4 @@
-# Day 56- Tuning Trouble
+# Day 6 - Tuning Trouble
 
 ## Create the project skeleton
 
