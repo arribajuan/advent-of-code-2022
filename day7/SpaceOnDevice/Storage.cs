@@ -107,23 +107,23 @@ public class Storage
         return result;
     }
     
-    
-    
-    
-    
-    /*
-     
-To begin, find all of the directories with a total size of at most 100000, 
-then calculate the sum of their total sizes. 
+    public void Star2Calculation(long directorySizeThreshold, StorageDirectory currentDirectory, ref long result)
+    {
+        System.Diagnostics.Debug.WriteLine($"{currentDirectory.TotalBranchSize} - {currentDirectory.Path}");
 
-In the example above, these directories are a and e; the sum of their total sizes is 95437 (94853 + 584). (As in this example, this process can count files more than once!)
-
-Find all of the directories with a total size of at most 100000. What is the sum of the total sizes of those directories?
-     
-     
-directory e is 584 because it contains a single file i of size 584 and no other directories.
-directory a has total size 94853 because it contains files f (size 29116), g (size 2557), and h.lst (size 62596), plus file i indirectly (a contains e which contains i).
-Directory d has total size 24933642.
-/ contains every file. Its total size is 48381165, the sum of the size of every file.
-    */
+        if (currentDirectory.TotalBranchSize >= directorySizeThreshold)
+        {
+            System.Diagnostics.Debug.WriteLine(" - useful");
+            if (result == 0 || result > currentDirectory.TotalBranchSize)
+            {
+                System.Diagnostics.Debug.WriteLine(" - we use it");
+                result = currentDirectory.TotalBranchSize;
+            }
+        }
+        
+        foreach (StorageDirectory subDirectory in currentDirectory.SubDirectories)
+        {
+            this.Star2Calculation(directorySizeThreshold, subDirectory, ref result);
+        }
+    }
 }
