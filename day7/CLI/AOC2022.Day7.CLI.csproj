@@ -5,12 +5,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\assets\data\input.data.txt">
-      <Link>input.data.txt</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\assets\data\sample-data.txt">
       <Link>sample-data.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\data\input-data.txt">
+      <Link>input-data.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
