@@ -7,6 +7,6 @@ public class PositionInRope
 
     public override string ToString()
     {
-        return $"({this.X},{this.Y})";
-    }  
+        return $"({X},{Y})";
+    }
 }
