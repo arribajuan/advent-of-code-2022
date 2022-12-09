@@ -2,26 +2,26 @@ using System.Diagnostics;
 
 namespace AOC2022.Day9.Ropebridge;
 
-public class RopePhysicsSimulator
+public class RopeSimulator1
 {
-    public RopePhysicsSimulator(PositionInRope initialPosition, List<MotionInRope> motionInRopeList)
+    public RopeSimulator1(RopeKnot initialPosition, List<MotionInRope> motionInRopeList)
     {
-        HeadPosition = new PositionInRope { X = initialPosition.X, Y = initialPosition.Y };
-        TailPosition = new PositionInRope { X = initialPosition.X, Y = initialPosition.Y };
+        HeadPosition = new RopeKnot { X = initialPosition.X, Y = initialPosition.Y };
+        TailPosition = new RopeKnot { X = initialPosition.X, Y = initialPosition.Y };
         TailVisits = new Dictionary<string, int>();
 
         UpdateTailVisits();
-        SimulateMotionInRole(motionInRopeList);
+        SimulateMotionInRope(motionInRopeList);
     }
 
-    public PositionInRope HeadPosition { get; set; }
-    public PositionInRope TailPosition { get; set; }
+    public RopeKnot HeadPosition { get; set; }
+    public RopeKnot TailPosition { get; set; }
 
     public Dictionary<string, int> TailVisits { get; set; }
 
     public int TailUniqueLocationsVisited => CalculateTailUniqueLocationsVisited();
 
-    private void SimulateMotionInRole(List<MotionInRope> motionInRopeList)
+    private void SimulateMotionInRope(List<MotionInRope> motionInRopeList)
     {
         foreach (var motionInRope in motionInRopeList)
             for (var i = 0; i < motionInRope.Distance; i++)
