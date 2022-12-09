@@ -4,16 +4,140 @@ public class TreetopAnalyser
 {
     public int[,] TreetopMatrix { get; private set; }
     public int[,] VisibilityMatrix { get; private set; }
+    public int[,] ScenicScoreMatrix { get; private set; }
 
     public int TotalVisibleTrees => this.CountVisibleTrees();
+    public int HighestScenicScore => this.FindHighestScenicScore();
 
     public TreetopAnalyser(int[,] treetopMatrix)
     {
         this.TreetopMatrix = treetopMatrix;
         
         this.GenerateVisibilityMatrix();
+        this.GenerateScenicScoreMatrix();
     }
 
+    private void GenerateScenicScoreMatrix()
+    {
+        int totalRows = this.TreetopMatrix.GetLength(0);
+        int totalColumns = this.TreetopMatrix.GetLength(1);
+
+        #region Initialize scenic score matrix
+
+        this.ScenicScoreMatrix = new int[totalRows, totalColumns];
+
+        for (int i = 0; i < totalRows; i++)
+        {
+            for (int j = 0; j < totalColumns; j++)
+            {
+                this.ScenicScoreMatrix[i, j] = 0;
+            }
+        }
+        
+        #endregion
+        
+        for (int i = 0; i < totalRows; i++)
+        {
+            for (int j = 0; j < totalColumns; j++)
+            {
+                this.ApplyTreeScenicScore(i, j);
+            }
+        }
+    }
+
+    private void ApplyTreeScenicScore(int treeRow, int treeColumn)
+    {
+        int totalRows = this.TreetopMatrix.GetLength(0);
+        int totalColumns = this.TreetopMatrix.GetLength(1);
+        
+        int treeHeight = this.TreetopMatrix[treeRow, treeColumn];
+
+        #region Look to the left
+        
+        int visibleTreeCountToTheLeft = 0;
+        for (int j = treeColumn - 1; j >= 0; j--)
+        {
+            visibleTreeCountToTheLeft++;
+            
+            int currentHeight = this.TreetopMatrix[treeRow, j];
+            if (currentHeight >= treeHeight)
+            {
+                break;
+            }
+        }
+
+        #endregion
+        
+        #region Look to the right
+        
+        int visibleTreeCountToTheRight = 0;
+        for (int j = treeColumn + 1; j < totalColumns; j++)
+        {
+            visibleTreeCountToTheRight++;
+            
+            int currentHeight = this.TreetopMatrix[treeRow, j];
+            if (currentHeight >= treeHeight)
+            {
+                break;
+            }
+        }
+
+        #endregion
+        
+        #region Look to the top
+        
+        int visibleTreeCountToTheTop = 0;
+        for (int i = treeRow - 1; i >= 0; i--)
+        {
+            visibleTreeCountToTheTop++;
+            
+            int currentHeight = this.TreetopMatrix[i, treeColumn];
+            if (currentHeight >= treeHeight)
+            {
+                break;
+            }
+        }
+
+        #endregion
+        
+        #region Look to the bottom
+        
+        int visibleTreeCountToTheBottom = 0;
+        for (int i = treeRow + 1; i < totalRows; i++)
+        {
+            visibleTreeCountToTheBottom++;
+            
+            int currentHeight = this.TreetopMatrix[i, treeColumn];
+            if (currentHeight >= treeHeight)
+            {
+                break;
+            }
+        }
+
+        #endregion
+        
+        int scenicScore = visibleTreeCountToTheLeft * visibleTreeCountToTheRight * visibleTreeCountToTheTop * visibleTreeCountToTheBottom;
+        this.ScenicScoreMatrix[treeRow, treeColumn] = scenicScore;
+    }
+
+    private int FindHighestScenicScore()
+    {
+        int result = 0;
+
+        for (int i = 0; i < this.ScenicScoreMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < this.ScenicScoreMatrix.GetLength(1); j++)
+            {
+                if (this.ScenicScoreMatrix[i, j] > result)
+                {
+                    result = this.ScenicScoreMatrix[i, j];
+                }
+            }
+        }
+        
+        return result;
+    }
+    
     private void GenerateVisibilityMatrix()
     {
         int totalRows = this.TreetopMatrix.GetLength(0);
@@ -65,7 +189,6 @@ public class TreetopAnalyser
         if (maximumHeight < treeHeight)
         {
             this.VisibilityMatrix[treeRow, treeColumn] = 1;
-            //System.Diagnostics.Debug.WriteLine($"Tree of height {treeHeight} at ({treeRow}, {treeColumn}) is VISIBLE from the LEFT");
         }
 
         #endregion
@@ -85,7 +208,6 @@ public class TreetopAnalyser
         if (maximumHeight < treeHeight)
         {
             this.VisibilityMatrix[treeRow, treeColumn] = 1;
-            //System.Diagnostics.Debug.WriteLine($"Tree of height {treeHeight} at ({treeRow}, {treeColumn}) is VISIBLE from the RIGHT");
         }
         
         #endregion
@@ -105,7 +227,6 @@ public class TreetopAnalyser
         if (maximumHeight < treeHeight)
         {
             this.VisibilityMatrix[treeRow, treeColumn] = 1;
-            //System.Diagnostics.Debug.WriteLine($"Tree of height {treeHeight} at ({treeRow}, {treeColumn}) is VISIBLE from the TOP");
         }
         
         #endregion
@@ -125,7 +246,6 @@ public class TreetopAnalyser
         if (maximumHeight < treeHeight)
         {
             this.VisibilityMatrix[treeRow, treeColumn] = 1;
-            //System.Diagnostics.Debug.WriteLine($"Tree of height {treeHeight} at ({treeRow}, {treeColumn}) is VISIBLE from the BOTTOM");
         }
         
         #endregion

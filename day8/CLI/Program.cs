@@ -11,9 +11,12 @@ TreetopAnalyser ta = new TreetopAnalyser(inputMatrix);
 Console.WriteLine("Advent of code - Day 8 - console");
 Console.WriteLine("");
 Console.WriteLine($"Total visible trees: {ta.TotalVisibleTrees}");
+Console.WriteLine($"Highest scenic score: {ta.HighestScenicScore}");
 Console.WriteLine("");
 
 System.Diagnostics.Debug.WriteLine("Advent of code - Day 8 - debug");
 System.Diagnostics.Debug.WriteLine("");
 System.Diagnostics.Debug.WriteLine($"Total visible trees: {ta.TotalVisibleTrees}");
+System.Diagnostics.Debug.WriteLine($"Highest scenic score: {ta.HighestScenicScore}");
 System.Diagnostics.Debug.WriteLine("");
+
