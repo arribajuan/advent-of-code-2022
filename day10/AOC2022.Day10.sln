@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day10.CLI", "CLI\AOC2022.Day10.CLI.csproj", "{6E5A3DBD-1819-4115-B8DF-58D5DD338724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day10.CRTube", "CRTube\AOC2022.Day10.CRTube.csproj", "{66591263-A03E-4A92-BC9E-09FD9E159AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2022.Day10.CRTube.Tests", "CRTube.Tests\AOC2022.Day10.CRTube.Tests.csproj", "{06178E7B-4557-4841-B992-3597676B3F64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E5A3DBD-1819-4115-B8DF-58D5DD338724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5A3DBD-1819-4115-B8DF-58D5DD338724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5A3DBD-1819-4115-B8DF-58D5DD338724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5A3DBD-1819-4115-B8DF-58D5DD338724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66591263-A03E-4A92-BC9E-09FD9E159AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66591263-A03E-4A92-BC9E-09FD9E159AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66591263-A03E-4A92-BC9E-09FD9E159AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66591263-A03E-4A92-BC9E-09FD9E159AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06178E7B-4557-4841-B992-3597676B3F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06178E7B-4557-4841-B992-3597676B3F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06178E7B-4557-4841-B992-3597676B3F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06178E7B-4557-4841-B992-3597676B3F64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
