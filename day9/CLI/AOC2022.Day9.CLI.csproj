@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
-        <ProjectReference Include="..\Ropebridge\AOC2022.Day9.Ropebridge.csproj"/>
+        <ProjectReference Include="..\Ropebridge\AOC2022.Day9.Ropebridge.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -9,10 +9,20 @@
             <Link>input-data.txt</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Include="..\assets\data\sample-data.txt">
-            <Link>sample-data.txt</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\assets\data\sample1-data.txt">
+        <Link>sample1-data.txt</Link>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\assets\data\sample2-data.txt">
+        <Link>sample2-data.txt</Link>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <PropertyGroup>
