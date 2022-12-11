@@ -34,3 +34,7 @@ foreach (LogItem logItem in cpuInput.Log)
 Console.WriteLine($"");
 Console.WriteLine($"Star 1 answer: {signalStrengthTotal}");
 
+CRT crt = new CRT(screenRows: 6, screenColumns: 40);
+Console.WriteLine($"");
+Console.WriteLine($"Star 2 answer below ... ");
+Console.WriteLine(crt.DrawScreen(cpuInput.Log));
