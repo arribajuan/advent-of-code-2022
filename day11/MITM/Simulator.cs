@@ -13,7 +13,7 @@ public class Simulator
         Monkeys = initialMonkeys;
     }
 
-    public void PlayRound()
+    public void PlayRound(double gcd)
     {
         foreach (Monkey monkey in Monkeys)
         {
@@ -47,13 +47,14 @@ public class Simulator
                     newWorryLevel = initialWorryLevel + modifyValueBy;
                     Debug.WriteLine($"    - Worry level is increased by {modifyValueBy} to {newWorryLevel}.");
                 }
-
+                
                 // Star 1
                 //long finalWorryLevel = newWorryLevel / 3;
                 //Debug.WriteLine($"    - Monkey gets bored with item. Worry level is divided by 3 to {finalWorryLevel}.");
                 
                 // Star 2
-                long finalWorryLevel = newWorryLevel;
+                double finalWorryLevel = newWorryLevel % gcd;
+                Debug.WriteLine($"    - Monkey gets bored with item. Worry level is divided by {gcd} to {finalWorryLevel}.");
                 
                 #endregion
                 
@@ -83,9 +84,11 @@ public class Simulator
 
     public void PlayRounds(int roundsToPlay)
     {
+        double gcd = Monkeys.Select(x => x.TestValue).Aggregate((a, x) => a * x);
+        
         for (int i = 0; i < roundsToPlay; i++)
         {
-            PlayRound();
+            PlayRound(gcd);
         }
     }
 
