@@ -6,7 +6,7 @@ public class Monkey
     public List<long> ItemsHeld { get; set; }
     public string OperationName { get; set; }
     public string OperationValueType { get; set; }
-    public int OperationValue { get; set; }
+    public long OperationValue { get; set; }
     public int TestValue { get; set; }
     public int TestTargetMonkeyIfTrue { get; set; }
     public int TestTargetMonkeyIfFalse { get; set; }

@@ -32,7 +32,7 @@ public class Simulator
                 }
                 else
                 {
-                    modifyValueBy = Convert.ToInt64(monkey.OperationValue);
+                    modifyValueBy = monkey.OperationValue;
                 }
                 
                 long newWorryLevel = 0;

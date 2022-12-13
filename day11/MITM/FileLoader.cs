@@ -45,7 +45,7 @@ public class FileLoader
                     else
                     {
                         newMonkey.OperationValueType = "value";
-                        newMonkey.OperationValue = Convert.ToInt32(fileLine3[1]);
+                        newMonkey.OperationValue = Convert.ToInt64(fileLine3[1]);
                     }
 
                     #endregion
