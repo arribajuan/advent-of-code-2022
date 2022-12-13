@@ -27,7 +27,7 @@ public class FileLoader
                     string fileLine2 = fileLines[i + 1].Substring(17, fileLines[i + 1].Length - 17); 
                     foreach (string item in fileLine2.Split(','))
                     {
-                        newMonkey.ItemsHeld.Add(Convert.ToInt32(item));
+                        newMonkey.ItemsHeld.Add(Convert.ToInt64(item));
                     }
 
                     #endregion

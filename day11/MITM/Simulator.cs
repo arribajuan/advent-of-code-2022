@@ -6,7 +6,7 @@ public class Simulator
 {
     public List<Monkey> Monkeys { get; set; }
 
-    public int TotalMonkeyBusiness => CalculateTotalMonkeyBusiness();
+    public long TotalMonkeyBusiness => CalculateTotalMonkeyBusiness();
 
     public Simulator(List<Monkey> initialMonkeys)
     {
@@ -19,23 +19,23 @@ public class Simulator
         {
             Debug.WriteLine($"Monkey {monkey.MonkeyNumber}:");
 
-            foreach (int initialWorryLevel in monkey.ItemsHeld.ToArray())
+            foreach (long initialWorryLevel in monkey.ItemsHeld.ToArray())
             {
                 Debug.WriteLine($" - Monkey inspects an item with a worry level of {initialWorryLevel}.");
                 
                 #region Calcualte new worry level 
                 
-                int modifyValueBy = 0;
+                long modifyValueBy = 0;
                 if (monkey.OperationValueType == "old")
                 {
                     modifyValueBy = initialWorryLevel;
                 }
                 else
                 {
-                    modifyValueBy = monkey.OperationValue;
+                    modifyValueBy = Convert.ToInt64(monkey.OperationValue);
                 }
                 
-                int newWorryLevel = 0;
+                long newWorryLevel = 0;
                 if (monkey.OperationName == "*")
                 {
                     newWorryLevel = initialWorryLevel * modifyValueBy;
@@ -48,8 +48,12 @@ public class Simulator
                     Debug.WriteLine($"    - Worry level is increased by {modifyValueBy} to {newWorryLevel}.");
                 }
 
-                int finalWorryLevel = newWorryLevel / 3;
-                Debug.WriteLine($"    - Monkey gets bored with item. Worry level is divided by 3 to {finalWorryLevel}.");
+                // Star 1
+                //long finalWorryLevel = newWorryLevel / 3;
+                //Debug.WriteLine($"    - Monkey gets bored with item. Worry level is divided by 3 to {finalWorryLevel}.");
+                
+                // Star 2
+                long finalWorryLevel = newWorryLevel;
                 
                 #endregion
                 
@@ -85,7 +89,7 @@ public class Simulator
         }
     }
 
-    private int CalculateTotalMonkeyBusiness()
+    private long CalculateTotalMonkeyBusiness()
     {
         var topMonkeys =
                 (from m in Monkeys
@@ -93,8 +97,8 @@ public class Simulator
                     select m.Interactions
                 ).Take(2);
 
-        int result = 1;
-        foreach (int monkeyInteractionTotal in topMonkeys)
+        long result = 1;
+        foreach (long monkeyInteractionTotal in topMonkeys)
         {
             result *= monkeyInteractionTotal;
         }
