@@ -10,6 +10,7 @@ public class Monkey
     public int TestValue { get; set; }
     public int TestTargetMonkeyIfTrue { get; set; }
     public int TestTargetMonkeyIfFalse { get; set; }
+    public int Interactions { get; set; }
 
     public Monkey()
     {
@@ -21,5 +22,6 @@ public class Monkey
         TestValue = 0;
         TestTargetMonkeyIfTrue = 0;
         TestTargetMonkeyIfFalse = 0;
+        Interactions = 0;
     }
 }
